@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MdiChat.View.TeamInfoChangeDescPage"
+             Title="Change Team Description">
+    <ScrollView>
+        <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+            <Button x:Name="btnSaveTeamDesc" Text="Save"  Style="{DynamicResource buttonStyleRegular}"
+              Clicked="btnSaveTeamDesc_Clicked"/>
+            <Label Text="Enter the desctiontion of the Team..." TextColor="Gray" FontSize="Medium"/>
+            <Editor x:Name="txtDsc" Text="" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
+            <!--<Button Text="Click Me" Command="{Binding IncreaseCountCommand}"/>-->
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MdiChat.View.LegalInfoPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="Legal Info">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <BoxView HeightRequest="40" Color="Transparent"/>
+            <ffimageloading:CachedImage HorizontalOptions="Center"
+		        	HeightRequest="200" DownsampleToViewSize="true" Source = "Legal2.png">
+            </ffimageloading:CachedImage>
+            <BoxView HeightRequest="20" Color="Transparent"/>
+            <Label x:Name="lblTearms" Text="Tearms of Service" Style="{DynamicResource labelStyleHeadingLargeCenter}">
+            <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="lblTearms_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+            </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="lblPrivacy" Text="Privacy Policy" Style="{DynamicResource labelStyleHeadingLargeCenter}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="lblPrivacy_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="lblLicence" Text="End User Licence Aggreement" Style="{DynamicResource labelStyleHeadingLargeCenter}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="lblLicence_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

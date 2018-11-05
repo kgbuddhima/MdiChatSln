@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:MdiChat.Converter;assembly=MdiChat"
+             xmlns:behaviors="clr-namespace:MdiChat.Behaviors;assembly=MdiChat"
+             x:Class="MdiChat.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <Color x:Key="backgroundColorRegular">White</Color>
+            <Color x:Key="backgroundColorMessage">#A2BFFF</Color>
+            <Color x:Key="backgroundColorLightGray">Silver</Color>
+            <Color x:Key="textColorRegular">Black</Color>
+            <Color x:Key="textColorEntry">#7C64B8</Color>
+            <Color x:Key="textColorLight">#C0B5FF</Color>
+            <Color x:Key="textColorLightGray">Silver</Color>
+            <Color x:Key="textColorHeading">#603F82</Color>
+            <Color x:Key="textColorButton">White</Color>
+            <Color x:Key="textColorButtonCalc">#6A309C</Color>
+            <Color x:Key="textColorLogo">#6A309C</Color>
+            <Color x:Key="buttonColorRegular">#6A309C</Color>
+            <Color x:Key="buttonColorTabUnSelected">#7C64B8</Color>
+            <Color x:Key="buttonColorSpecial">White</Color>
+            <Color x:Key="buttonColorSpecialDark">#BE36A4</Color>
+            <Color x:Key="buttonColorCalculator">#E1DDFF</Color>
+            <Color x:Key="boxViewTextContainer">#C0B5FF</Color>
+            <Color x:Key="boxViewDialague">#7C64B8</Color>
+            <Color x:Key="boxViewSeparator">#E1DDFF</Color>
+            <Color x:Key="WhiteColor">#ffffff</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="BackgroundColor">#F4F6FA</Color>
+            <Color x:Key="AccentColor">#00857D</Color>
+            <Color x:Key="LightGreenColor">#83D01B</Color>
+            <Color x:Key="GreenColor">#00A69C</Color>
+            <Color x:Key="DarkGreenColor">#00857D</Color>
+            <Color x:Key="GrayColor">#e2e2e2</Color>
+            <Color x:Key="ErrorColor">#ff5252</Color>
+            <Color x:Key="TextColor">#757575</Color>
+            <Color x:Key="InverseTextColor">#FFFFFF</Color>
+            <Color x:Key="LightTextColor">#979797</Color>
+            <Color x:Key="iOSDefaultTintColor">#007aff</Color>
+            <Color x:Key="SeparatorLineColor">#CCCCCC</Color>
+            <Color x:Key="AndroidDefaultButtonClassBackgroundColor">#C9C9C9</Color>
+            <Color x:Key="iOSDefaultButtonClassBackgroundColor">Transparent</Color>
+            <Color x:Key="AndroidDefaultButtonClassBorderColor">Transparent</Color>
+            <Color x:Key="iOSDefaultButtonClassBorderColor">#007aff</Color>
+            <Color x:Key="AndroidDefaultButtonClassTextColor">#FFFFFF</Color>
+            <Color x:Key="iOSDefaultButtonClassTextColor">#007aff</Color>
+            <Color x:Key="AndroidEntryBackgroundColor">Transparent</Color>
+            <Color x:Key="iOSEntryBackgroundColor">#FFFFFF</Color>
+            <Color x:Key="AndroidDefaultAccentColorColor">#1FAECE</Color>
+            <Color x:Key="AndroidListViewBackgroundColor">Transparent</Color>
+            <Color x:Key="iOSListViewBackgroundColor">Transparent</Color>
+            <Color x:Key="MDIColorPurple">#7C64B8</Color>
+
+            <converter:MdiImageConverter x:Key="MdiImageConverter"/>
+            <converter:UserIdToImageFileConverter x:Key="UserIdToImageFileConverter"></converter:UserIdToImageFileConverter>
+
+            <Style x:Key="labelStyleRegular" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorRegular}" />
+            </Style>
+            <Style x:Key="labelStyleRegularLarge" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorRegular}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="labelStyleDisplayValues" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="labelStyleRegularExLargeCenter" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+            <Style x:Key="labelStyleRegularSmall" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorRegular}" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+            <Style x:Key="labelStyleHeading" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+            </Style>
+            <Style x:Key="labelStyleHeadingLargeCenter" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleHeadingLargeCenterGray" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleLogo" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorLogo}" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleHeadingMediumCenter" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleHeadingWithBackColor" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource backgroundColorMessage}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style x:Key="labelStyleHeadingWithBackColorLarge" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource backgroundColorMessage}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="labelStyleLight" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorLight}" />
+            </Style>
+            <Style x:Key="labelStyleHeaderLight" TargetType="Label">
+                <Setter Property="TextColor"  Value="{DynamicResource boxViewSeparator}"/>
+            </Style>
+            <Style x:Key="labelStyleLightGray" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="labelStyleLightGraySmall" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="labelStyleDialagueHeading" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleDialagueH2" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleAlert" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorHeading}" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+            <Style x:Key="labelStyleAlertFooter" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorLightGray}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+            <Style x:Key="labelStyleDialagueCommand" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+            <Style x:Key="labelStyleDialgueOptions" TargetType="Label">
+                <Setter Property="TextColor"  Value="{DynamicResource textColorHeading}" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleSettingsMenu" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>
+            <Style x:Key="labelStyleMenu" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleResultBoxColourful" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleResultBox" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="labelStyleResultLargeCenter" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource backgroundColorLightGray}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            <Style x:Key="EntryStyleRegular" TargetType="Entry">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="PlaceholderColor" Value="{DynamicResource textColorLightGray}" />
+            </Style>
+            <Style x:Key="EntryStyleRegularCentre" TargetType="Entry">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="PlaceholderColor" Value="{DynamicResource textColorLightGray}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="EntryStylePasswordNum" TargetType="Entry">
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="PlaceholderColor" Value="{DynamicResource textColorLightGray}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="IsPassword" Value="True" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="WidthRequest" Value="-1" />
+                <Setter Property="Keyboard" Value="Numeric" />
+                <Setter Property="Placeholder" Value="0" />
+            </Style>
+
+            <Style x:Key="backgroundStyleRegular" TargetType="VisualElement">
+                <Setter Property="BackgroundColor" Value="{DynamicResource backgroundColorRegular}" />
+            </Style>
+            <Style x:Key="backgroundStyleMessage" TargetType="VisualElement">
+                <Setter Property="BackgroundColor" Value="{DynamicResource backgroundColorMessage}" />
+            </Style>
+
+            <Style x:Key="buttonStyleDanger" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource buttonColorSpecialDark}" />
+                <Setter Property="TextColor" Value="{DynamicResource textColorButton}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BorderRadius" Value="30" />
+            </Style>
+            <Style x:Key="buttonStyleRegular" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource buttonColorRegular}" />
+                <Setter Property="TextColor" Value="{DynamicResource textColorButton}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BorderRadius" Value="9" />
+            </Style>
+            <Style x:Key="buttonStyleTabUnSelected" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{DynamicResource buttonColorTabUnSelected}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BorderRadius" Value="9" />
+            </Style>
+            <Style x:Key="buttonStyleSpecial" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource textColorButton}" />
+                <Setter Property="TextColor" Value="{DynamicResource buttonColorRegular}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BorderColor" Value="{DynamicResource buttonColorSpecial}" />
+            </Style>
+            <Style x:Key="buttonStyleTransparent" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{DynamicResource textColorButton}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+            <Style x:Key="buttonStyleStepper" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Silver" />
+                <Setter Property="TextColor" Value="{DynamicResource textColorEntry}" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+            <Style x:Key="buttonStyleCalculator" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource buttonColorCalculator}" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="TextColor" Value="{DynamicResource textColorButtonCalc}" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="75" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+
+            <Style x:Key="boxViewStyleTextContainer" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource boxViewTextContainer}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="boxViewStyleDialague" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource boxViewDialague}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="boxViewStyleOuterBackgroundDark" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="Opacity" Value="0.5" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="boxViewStyleOuterBackgroundLight" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="boxViewStyleTabSelected" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource buttonColorSpecial}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="boxViewStyleTabNotSelected" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource buttonColorRegular}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="boxViewStyleSeparator" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource boxViewSeparator}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HeightRequest" Value="2" />
+            </Style>
+            <Style x:Key="boxViewStyleResultinBox" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource textColorLightGray}" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="60" />
+            </Style>
+
+            <Style x:Key="gridStyleDialague" TargetType="Grid">
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+            <Style x:Key="gridStyleContacts" TargetType="Grid">
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="ColumnSpacing" Value="5" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="10,10,10,10" />
+            </Style>
+            <Style x:Key="gridStyleRegular" TargetType="Grid">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style x:Key="gridStyleSettingsHeader" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{DynamicResource buttonColorRegular}" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+
+            <Style x:Key="imageStyleDialagueHeader" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="imageStyleInListView" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="imageStyleInListViewHeader" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,10,0,10" />
+            </Style>
+            <Style x:Key="imageStyleInListViewSmall" TargetType="Image">
+                <Setter Property="WidthRequest" Value="25" />
+                <Setter Property="HeightRequest" Value="25" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="imageStyleOptions" TargetType="Image">
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="imageStyleSearchBar" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="imageStyleSettings" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="imageStyleSpecialAddButton" TargetType="Image">
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="End" />
+            </Style>
+
+            <Style x:Key="activityIndiatorStylePrcessing" TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="{DynamicResource textColorRegular}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+            </Style>
+            <Style x:Key="EntryStyle"
+                   TargetType="{x:Type Entry}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlackColor}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource BlackColor}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="BackgroundColor" 
+                        Value="Transparent" />
+                <Setter Property="Opacity"
+                        Value="0.6" />
+                <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"
+                        Value="True" />
+                <Setter Property="behaviors:LineColorBehavior.LineColor"
+                        Value="{StaticResource BlackColor}" />
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" 
+                             Value="True">
+                        <Setter Property="Opacity" Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <OnPlatform x:Key="LittleSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="11" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="12" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="MidMediumSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="12" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="14" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="MediumSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="14" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="16" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="LargeSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="16" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="18" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="LargerSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="18" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="20" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="BigSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="20" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="24" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="ExtraBigSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="24" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="32" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="HugeSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="32" />
+                <On Platform="Android, UWP, WinRT, WinPhone" Value="48" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="FontAttributes"
+                        x:Key="BaseButtonFontAttributes">
+                <On Platform="iOS" Value="Bold" />
+                <On Platform="Android" Value="None" />
+            </OnPlatform>
+
+            <Style x:Key="ValidationErrorLabelStyle"
+                   TargetType="{x:Type Label}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ErrorColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LittleSize}" />
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

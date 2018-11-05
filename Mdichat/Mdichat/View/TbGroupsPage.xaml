@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:local="clr-namespace:MdiChat;assembly=MdiChat"
+             x:Class="MdiChat.View.TbGroupsPage">
+    <ContentPage.Content>
+        <!--<ScrollView>-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" x:Name="grdTeams" Style="{DynamicResource gridStyleContacts}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Entry  Grid.Row="2" Grid.Column="0"   x:Name="TxtSearchStr" TextChanged="TxtSearchStr_TextChanged" Placeholder="Search Group..." FontSize="Medium" VerticalOptions="Center" Style="{DynamicResource labelStyleLightGray}"></Entry>
+                <ffimageloading:CachedImage Grid.Row="2" Grid.Column="1" DownsampleToViewSize="true" Source = "Search64A.png" Style="{DynamicResource imageStyleSearchBar}">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tgrSearchImage" NumberOfTapsRequired="1" Tapped="tgrSearchImage_Tapped"/>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+                <ScrollView   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  VerticalOptions="Fill">
+                    <ListView x:Name="listViewTeamList" IsGroupingEnabled="True" HasUnevenRows="true"  
+                          ItemsSource="{Binding ContactGroups}"
+                          SeparatorVisibility="Default" GroupShortNameBinding="{Binding ContactShortTitle}" 
+                          GroupDisplayBinding="{Binding ContactTitle}" >
+                        <ListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <ffimageloading:CachedImage DownsampleToViewSize="true" 
+                                                                    Source="{Binding Image}" 
+                                                                    Style="{DynamicResource imageStyleInListViewHeader}">
+                                        </ffimageloading:CachedImage>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.GroupHeaderTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" DownsampleToViewSize="true" Source="Teams.png" Style="{DynamicResource imageStyleInListView}">
+                                                <!--<ffimageloading:CachedImage.GestureRecognizers>
+                                                        <TapGestureRecognizer x:Name="tgrTabTeam_TeamImage" NumberOfTapsRequired="1" Tapped="tgrTabTeam_TeamImage_Tapped"/>
+                                                    </ffimageloading:CachedImage.GestureRecognizers>-->
+                                            </ffimageloading:CachedImage>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding ContactName}" FontSize="Medium" Style="{DynamicResource labelStyleHeading}"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding ContactNumber}" Style="{DynamicResource labelStyleRegularSmall}"/>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer x:Name="gr_grdlistViewTeamList" NumberOfTapsRequired="1" Tapped="gr_grdlistViewTeamList_Tapped"></TapGestureRecognizer>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+                <ffimageloading:CachedImage x:Name="imgTeamTabAddBtn"  Grid.Row="3" Grid.Column="1" Source="Plus.png" DownsampleToViewSize="true" Style="{DynamicResource imageStyleSpecialAddButton}">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTabAddBtn" NumberOfTapsRequired="1" Tapped="grTeamTabAddBtn_Tapped"/>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" x:Name="grdTeamTabReadyToCreateTeams" ColumnSpacing="5"
+              VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8" Color="White" Opacity="0.7" 
+                          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTab_BoxView"  NumberOfTapsRequired="1"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Label Text=" Create New Message " Grid.Row="2" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" 
+                        FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTab_LblNewMsg"  NumberOfTapsRequired="1" Tapped="grTeamTab_LblNewMsg_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Image Source="Message.png"   Grid.Row="2" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTab_ImgNewMsg" NumberOfTapsRequired="1" Tapped="grTeamTab_ImgNewMsg_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text=" Create Team " Grid.Row="3" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" 
+                        FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTab_LblCreateTeam" NumberOfTapsRequired="1" Tapped="grTeamTab_LblCreateTeam_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Image Source="Team.png"   Grid.Row="3" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTab_ImgCreateTeam" NumberOfTapsRequired="1" Tapped="grTeamTab_ImgCreateTeam_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <!--<Label Text=" Create Category " Grid.Row="4" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" 
+                        FontSize="Medium">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="grTeamTab_LblCreateCategory" NumberOfTapsRequired="1" Tapped="grTeamTab_LblCreateCategory_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Image Source="Group.png"   Grid.Row="4" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="grTeamTab_ImgCreateCategory" NumberOfTapsRequired="1" Tapped="grTeamTab_ImgCreateCategory_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text=" Modify Category " Grid.Row="5" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" 
+                        FontSize="Medium">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="grTeamTab_LblModifyCategory" NumberOfTapsRequired="1" Tapped="grTeamTab_LblModifyCategory_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Image Source="GroupEdit.png"   Grid.Row="5" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="grTeamTab_ImgModifyCategoryp" NumberOfTapsRequired="1" Tapped="grTeamTab_ImgModifyCategoryp_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>-->
+                <Image Source="Back.png"  Grid.Row="6" Grid.Column="3" HorizontalOptions="End" VerticalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grTeamTab_ImgCancel" Tapped="grTeamTab_ImgCancel_Tapped"  NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" ColumnSpacing="5" x:Name="grdTeamTbTeamTypeSelect">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="9" Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="7" Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Style="{DynamicResource boxViewStyleDialague}"/>
+                <ffimageloading:CachedImage Grid.Row="1" Grid.Column="2" DownsampleToViewSize="true" Source = "Pencil.png" Style="{DynamicResource imageStyleDialagueHeader}">
+                </ffimageloading:CachedImage>
+                <Label  Grid.Row="2" Grid.Column="2" Text="Team Type" FontSize="Large" FontAttributes="Bold"  HorizontalTextAlignment="Center" Style="{DynamicResource labelStyleLightGray}"/>
+                <Label  Grid.Row="3" Grid.Column="2" Text="Which type of team you want to create ?" HorizontalTextAlignment="Center" Style="{DynamicResource labelStyleLightGray}"/>
+                <Button  Grid.Row="4" Grid.Column="2" x:Name="btnTeamTbTeamTypeRegTeam" Text="Regular Team" Style="{DynamicResource buttonStyleRegular}"
+                             Clicked="btnTeamTbTeamTypeRegTeam_Clicked"/>
+                <Button  Grid.Row="5" Grid.Column="2" x:Name="btnTeamTbTeamTypePatientColTeam"  Text="Patient Collaborative care" Style="{DynamicResource buttonStyleRegular}" 
+                             Clicked="btnTeamTbTeamTypePatientColTeam_Clicked"/>
+                <Button  Grid.Row="6" Grid.Column="2" x:Name="btnTeamTbTeamTypeCancel" Text="Cancel" Style="{DynamicResource buttonStyleSpecial}" 
+                             Clicked="btnTeamTbTeamTypeCancel_Clicked"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" ColumnSpacing="5" x:Name="grdTeamTb_GroupCreate">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="10" Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="8" Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Style="{DynamicResource boxViewStyleDialague}"/>
+                <ffimageloading:CachedImage Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" DownsampleToViewSize="true" Source = "Pencil.png" Style="{DynamicResource imageStyleDialagueHeader}" >
+                </ffimageloading:CachedImage>
+                <Label  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" x:Name="lblTeamTb_TeamCreateHeading" Text="Team Name" FontSize="Large" FontAttributes="Bold" 
+                            HorizontalTextAlignment="Center" Style="{DynamicResource labelStyleLightGray}"/>
+                <Entry  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" x:Name="txtTeamTb_RegTeamName" 
+                        Text="{Binding NewGroupModel.GroupName}"  Placeholder="Enter the team name ..." Style="{DynamicResource EntryStyleRegularCentre}"/>
+                <Entry  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" x:Name="txtTeamTb_PatientTeamFname" 
+                        Text="{Binding NewGroupModel.FirstName}" Placeholder="First Name ..." Style="{DynamicResource EntryStyleRegularCentre}"/>
+                <Entry  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" x:Name="txtTeamTb_PatientTeamLname" 
+                        Text="{Binding NewGroupModel.LastName}" Placeholder="Last Name ..." Style="{DynamicResource EntryStyleRegularCentre}"/>
+                <Label  Grid.Row="5" Grid.Column="2" Text="DOB : " FontSize="Medium" FontAttributes="Bold"  Style="{DynamicResource labelStyleLightGray}"
+                            HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                <local:CustomDatePicker  Grid.Row="5" Grid.Column="3" x:Name="btnTeamTb_DobTeamInfo" Date="{Binding NewGroupModel.DateOfBirth}"
+                             Style="{DynamicResource labelStyleLightGray}"/>
+                <Button  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" x:Name="btnTeamTb_TeamInfoConform"  Text="Conform" Style="{DynamicResource buttonStyleRegular}"
+                             Clicked="btnTeamTb_TeamInfoConform_Clicked"/>
+                <Button  Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" x:Name="btnTeamTb_TeamInfoCancel" Text="Cancel" Style="{DynamicResource buttonStyleSpecial}" 
+                             Clicked="btnTeamTb_TeamInfoCancel_Clicked"/>
+            </Grid>
+            <!--<Grid Grid.Row="0" Grid.Column="0" ColumnSpacing="5" x:Name="grdTeamTbCategoryCreate">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="9" Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                    <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Grid.RowSpan="7" Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                    <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Style="{DynamicResource boxViewStyleDialague}"/>
+                    <ffimageloading:CachedImage Grid.Row="1" Grid.Column="2" DownsampleToViewSize="true" Source = "Pencil.png" Style="{DynamicResource imageStyleDialagueHeader}" >
+                    </ffimageloading:CachedImage>
+                    <Label  Grid.Row="2" Grid.Column="2" Text="Create Cateory" Style="{DynamicResource labelStyleDialagueH2}"/>
+                    <Label  Grid.Row="3" Grid.Column="2" Text="Enter the Class Name" Style="{DynamicResource labelStyleDialagueCommand}"/>
+                    <Entry  Grid.Row="4" Grid.Column="2" Style="{DynamicResource EntryStyleRegular}"/>
+                    <Button  Grid.Row="5" Grid.Column="2" x:Name="btnTeamTbCategoryCreateSave"  Text="Save" Style="{DynamicResource buttonStyleRegular}"
+                             Clicked="btnTeamTbCategoryCreateSave_Clicked"/>
+                    <Button  Grid.Row="6" Grid.Column="2" x:Name="btnTeamTbCategoryCreateCancel" Text="Cancel" Style="{DynamicResource buttonStyleSpecial}" 
+                             Clicked="btnTeamTbCategoryCreateCancel_Clicked"/>
+                </Grid>-->
+            <!--<Grid  Grid.Row="0" Grid.Column="0" ColumnSpacing="5" x:Name="grdTeamTbConformInfo">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="10" Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="4" Grid.RowSpan="8" Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="4" Style="{DynamicResource boxViewStyleDialague}"/>
+                <ffimageloading:CachedImage Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" DownsampleToViewSize="true" Source = "Pencil.png" Style="{DynamicResource imageStyleDialagueHeader}">
+                </ffimageloading:CachedImage>
+                <Label  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Text="Verify Patient Info" FontSize="Large" FontAttributes="Bold" 
+                            Style="{DynamicResource labelStyleLightGray}"  HorizontalTextAlignment="Center"/>
+                <Label  Grid.Row="3" Grid.Column="2" Text="Category : " FontSize="Medium" TextColor="Gray" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Picker Grid.Row="3" Grid.Column="3" x:Name="tbTeam_CategoryPicker" SelectedIndex="1"  Style="{DynamicResource labelStyleLightGray}"/>
+                <Label  Grid.Row="4" Grid.Column="2" Text="DOB : " FontSize="Medium" FontAttributes="Bold"  Style="{DynamicResource labelStyleLightGray}"
+                            HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                <DatePicker  Grid.Row="4" Grid.Column="3" x:Name="btnTeamTb_DobTeamInfo"  Style="{DynamicResource labelStyleLightGray}"/>
+                <Label  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Text="Buddhima,Jeevan" FontSize="Large" FontAttributes="Bold"  Style="{DynamicResource labelStyleLightGray}"
+                            HorizontalTextAlignment="Center"/>
+                <Button  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" x:Name="btnTeamTb_ConformTeamInfo"  Text="Conform"   Style="{DynamicResource buttonStyleRegular}"
+                             Clicked="btnTeamTb_ConformTeamInfo_Clicked"/>
+                <Button  Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" x:Name="btnTeamTb_CancelTeamInfo" Text="Cancel" Style="{DynamicResource buttonStyleSpecial}"
+                             Clicked="btnTeamTb_CancelTeamInfo_Clicked"/>
+            </Grid>-->
+        </Grid>
+        <!--</ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

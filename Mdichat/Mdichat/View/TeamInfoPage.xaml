@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:local="clr-namespace:MdiChat;assembly=MdiChat"
+             x:Class="MdiChat.View.TeamInfoPage"
+             Title="{Binding GroupName}">
+    <ScrollView>
+        <Grid Style="{DynamicResource gridStyleRegular}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <BoxView HeightRequest="10" HorizontalOptions="FillAndExpand"/>
+                <ffimageloading:CachedImage Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"
+		        	 HeightRequest="175" WidthRequest="175" DownsampleToViewSize="true" Source = "User.png">
+                </ffimageloading:CachedImage>
+                <Label Text="  DETAILS" Style="{DynamicResource labelStyleHeadingWithBackColorLarge}"/>
+                <Grid x:Name="grdMain" Grid.Column="0" Grid.Row="0" ColumnSpacing="10" RowSpacing="10"
+                      Style="{DynamicResource gridStyleRegular}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <!--<RowDefinition Height="Auto"/>-->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" x:Name="lblTeamName" Text="{Binding GroupName}" Style="{DynamicResource labelStyleDialgueOptions}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="tgrImgTeam" NumberOfTapsRequired="1" Tapped="tgrImgTeam_Tapped"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Style="{DynamicResource boxViewStyleSeparator}" />
+                    <ffimageloading:CachedImage Grid.Row="2" Grid.Column="1" DownsampleToViewSize="true" Source ="Calander.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="2" Grid.Column="2" Text="DOB :" Style="{DynamicResource labelStyleMenu}"/>
+                    <DatePicker Grid.Row="2" Grid.Column="3" HorizontalOptions="FillAndExpand" Date="{Binding DateOfBirth}"/>
+                    <ffimageloading:CachedImage Grid.Row="2" Grid.Column="4" DownsampleToViewSize="true" Source = "Next.png" Style="{DynamicResource imageStyleInListViewSmall}">
+                    </ffimageloading:CachedImage>
+                    <!--<ffimageloading:CachedImage Grid.Row="3" Grid.Column="1" DownsampleToViewSize="true" Source = "List.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>-->
+                    <!--<Label Grid.Row="3" Grid.Column="2" x:Name="lblCategory" Grid.ColumnSpan="2" Text="Category 2" Style="{DynamicResource labelStyleMenu}"/>
+                    <ffimageloading:CachedImage Grid.Row="3" Grid.Column="4" DownsampleToViewSize="true" Source = "Next.png" Style="{DynamicResource imageStyleInListViewSmall}">
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="tgrCategoryNxtImg" NumberOfTapsRequired="1" Tapped="tgrCategoryNxtImg_Tapped"></TapGestureRecognizer>
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>-->
+                    <ffimageloading:CachedImage Grid.Row="3" Grid.Column="1" DownsampleToViewSize="true" Source = "Info3.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="Patient Demographics" Style="{DynamicResource labelStyleMenu}"/>
+                    <ffimageloading:CachedImage Grid.Row="3" Grid.Column="4" DownsampleToViewSize="true" Source = "Next.png" Style="{DynamicResource imageStyleInListViewSmall}">
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="tgrTeamDscNxtImg" NumberOfTapsRequired="1" Tapped="tgrTeamDscNxtImg_Tapped"></TapGestureRecognizer>
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                    <ffimageloading:CachedImage Grid.Row="4" Grid.Column="1" DownsampleToViewSize="true" Source = "Document.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Text="Files" Style="{DynamicResource labelStyleMenu}"/>
+                    <ffimageloading:CachedImage Grid.Row="4" Grid.Column="4" DownsampleToViewSize="true" Source = "Next.png" Style="{DynamicResource imageStyleInListViewSmall}">
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="tgrFilesNxtImg" NumberOfTapsRequired="1" Tapped="tgrFilesNxtImg_Tapped"></TapGestureRecognizer>
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                </Grid>
+                <Label Text="  OPTIONS" Style="{DynamicResource labelStyleHeadingWithBackColorLarge}"/>
+                <Grid Padding="10,5,10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" IsEnabled="{Binding ShoundOn}"
+                                                DownsampleToViewSize="true" Source = "SoundOn.png" Style="{DynamicResource imageStyleOptions}">
+                    </ffimageloading:CachedImage>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="1" IsEnabled="{Binding ShoundOff}"
+                                                DownsampleToViewSize="true" Source = "SoundOff.png" Style="{DynamicResource imageStyleOptions}">
+                    </ffimageloading:CachedImage>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="2"  IsEnabled="{Binding Mobile}"
+                                                DownsampleToViewSize="true" Source = "Mobile.png" Style="{DynamicResource imageStyleOptions}">
+                    </ffimageloading:CachedImage>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="3"  IsEnabled="{Binding Warning}"
+                                                DownsampleToViewSize="true" Source = "Warining.png" Style="{DynamicResource imageStyleOptions}">
+                    </ffimageloading:CachedImage>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="4"  IsEnabled="{Binding Health}"
+                                                DownsampleToViewSize="true" Source = "Health.png" Style="{DynamicResource imageStyleOptions}">
+                    </ffimageloading:CachedImage>
+                </Grid>
+                <BoxView HeightRequest="10" HorizontalOptions="FillAndExpand"/>
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="  ADMINS : 1"  Style="{DynamicResource labelStyleHeadingWithBackColorLarge}"/>
+                    <local:DynamicListView Grid.Row="1" Grid.Column="0"  x:Name="listViewAdmins" ItemsSource="{Binding AdminsCollection}"
+                          HasUnevenRows="true" SeparatorVisibility="Default" VerticalOptions="Fill">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>                                
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" DownsampleToViewSize="true" 
+                                                                WidthRequest="40" HeightRequest="40" Source = "ContactIcon.png">
+                                            </ffimageloading:CachedImage>
+                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding ContactName}" FontSize="Medium" Style="{DynamicResource labelStyleHeading}"/>
+                                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Owner}" FontSize="Small" Style="{DynamicResource labelStyleRegular}"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </local:DynamicListView>
+
+                    <Label  Grid.Row="2" Grid.Column="0" Text=" MEMBERS : 2" Style="{DynamicResource labelStyleHeadingWithBackColorLarge}"/>
+                    <local:DynamicListView Grid.Row="3" Grid.Column="0"  x:Name="listViewTeamMembers" ItemsSource="{Binding MembersCollection}"
+                              HasUnevenRows="true" SeparatorVisibility="Default">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" DownsampleToViewSize="true" 
+                                                                WidthRequest="40" HeightRequest="40" Source = "ContactIcon.png">
+                                            </ffimageloading:CachedImage>
+                                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding ContactName}" FontSize="Medium"  Style="{DynamicResource labelStyleHeading}"/>
+                                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Owner}" FontSize="Small"  Style="{DynamicResource labelStyleRegular}"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </local:DynamicListView>
+                    <Button Grid.Row="4" Grid.Column="0"  Text="Add New Msember" TextColor="White" BackgroundColor="#01148E" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+                </Grid>
+                <Label Text="  Deleting this Team will be deleted all of its messages" Style="{DynamicResource labelStyleHeadingWithBackColorLarge}" HorizontalTextAlignment="Center"/>
+                <BoxView HeightRequest="50" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Delete Team" Style="{DynamicResource buttonStyleDanger}"/>
+                <BoxView HeightRequest="20" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Grid  Grid.Row="0" Grid.Column="0" ColumnSpacing="5" x:Name="grdTeamTbConformInfo" Style="{DynamicResource gridStyleRegular}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="9"  Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Grid.RowSpan="7" Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Style="{DynamicResource boxViewStyleDialague}"/>
+                <ffimageloading:CachedImage Grid.Row="1" Grid.Column="2" DownsampleToViewSize="true" Source = "Pencil.png" Style="{DynamicResource imageStyleDialagueHeader}">
+                </ffimageloading:CachedImage>
+                <Label  Grid.Row="2" Grid.Column="2" Text="Edit Group Name" Style="{DynamicResource labelStyleDialagueH2}"/>
+                <Label  Grid.Row="3" Grid.Column="2" Text="Enter New Name for Team" Style="{DynamicResource labelStyleDialagueCommand}"/>
+                <Entry  Grid.Row="4" Grid.Column="2" x:Name="txtNewTeamName" Text=""  
+                        Placeholder="Ex : Team 1" Style="{DynamicResource EntryStyleRegular}"/>
+                <Button  Grid.Row="5" Grid.Column="2" x:Name="btnTeamTb_ConformTeamInfo" Text="Confirm" Style="{DynamicResource buttonStyleRegular}" Clicked="btnTeamTb_ConformTeamInfo_Clicked"/>
+                <Button  Grid.Row="6" Grid.Column="2" x:Name="btnTeamTb_CancelTeamInfo" Text="Cancel"  Style="{DynamicResource buttonStyleRegular}" Clicked="btnTeamTb_CancelTeamInfo_Clicked"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

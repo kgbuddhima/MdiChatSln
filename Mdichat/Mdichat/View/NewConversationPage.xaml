@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="MdiChat.View.NewConversationPage"
+             Title="New Chat ">
+    <ScrollView>
+        <Grid x:Name="grdContacts" ColumnSpacing="5"
+              VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Padding="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"   Padding="5,5,5,5" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{DynamicResource boxViewStyleTabNotSelected}"/>
+                <Button x:Name="btnAll" Text="All" Grid.Row="0" Grid.Column="1" Style="{DynamicResource buttonStyleRegular}"
+                        Clicked="btnAll_Clicked"></Button>
+                <Button x:Name="btnContacts" Text="Contacts"  Grid.Row="0" Grid.Column="2" Style="{DynamicResource buttonStyleTabUnSelected}"
+                        Clicked="btnContacts_Clicked"></Button>
+                <Button x:Name="btnTeams" Text="Teams"  Grid.Row="0" Grid.Column="3" Style="{DynamicResource buttonStyleTabUnSelected}"
+                        Clicked="btnTeams_Clicked"></Button>
+            </Grid>
+            <ffimageloading:CachedImage  Grid.Row="2" Grid.Column="0" DownsampleToViewSize="true" Source="Search64A.png" Style="{DynamicResource imageStyleSearchBar}">
+            </ffimageloading:CachedImage>
+            <Entry  Grid.Row="2" Grid.Column="1"  Placeholder="Search MDi Contacts..." FontSize="Medium" Style="{DynamicResource EntryStyleRegularCentre}"/>
+            <ScrollView   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  VerticalOptions="Fill">
+                <ListView x:Name="listViewContactList" HasUnevenRows="true" ItemsSource="{Binding ContactsCollection}"
+                          SeparatorVisibility="Default" 
+                          CachingStrategy="RecycleElement" ItemTapped="listViewContactList_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ffimageloading:CachedImage  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" DownsampleToViewSize="true" Source = "{Binding Image}" Style="{DynamicResource imageStyleInListView}">
+                                        </ffimageloading:CachedImage>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Contact_DisplayName}" FontSize="Medium" Style="{DynamicResource labelStyleHeading}"/>
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ContactNumber}" Style="{DynamicResource labelStyleRegularSmall}"/>
+                                        <Switch  Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" IsToggled="False" VerticalOptions="Center"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="0" />
+            <ActivityIndicator Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="2" IsVisible="False"
+                      x:Name="actSendingCode" IsRunning="False" Style="{DynamicResource activityIndiatorStylePrcessing}">
+            </ActivityIndicator>
+        </Grid>
+    </ScrollView>
+</ContentPage>

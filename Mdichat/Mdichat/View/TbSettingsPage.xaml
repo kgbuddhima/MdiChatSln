@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="MdiChat.View.TbSettingsPage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="*"/>
+                <RowDefinition  Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0"  RowSpacing="5" ColumnSpacing="5" Style="{DynamicResource gridStyleSettingsHeader}">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="5"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="5"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <ffimageloading:CachedImage Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Source="Pencil.png" Style="{DynamicResource imageStyleDialagueHeader}">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tgrTbSettingEditUserInfo" NumberOfTapsRequired="1" Tapped="tgrTbSettingEditUserInfo_Tapped"/>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+                <Label Grid.Row="1" Grid.Column="2" x:Name="lblUserName" Text="Test name" Grid.RowSpan="2" FontSize = "26" HorizontalTextAlignment="Start"
+                           HorizontalOptions="StartAndExpand" Style="{DynamicResource labelStyleLight}">
+                </Label>
+                <Label Grid.Row="2" Grid.Column="2" Text="MDi Chat Member" FontSize="20" HorizontalTextAlignment="Start"
+                           HorizontalOptions="StartAndExpand" Style="{DynamicResource labelStyleHeaderLight}"/>
+                <ffimageloading:CachedImage x:Name="ImgUserImage" Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" 
+                  HorizontalOptions="Center" VerticalOptions="Center"
+			      DownsampleToViewSize="true" HeightRequest="100" Source = "{Binding Image}" Aspect="AspectFit">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:CircleTransformation/>
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+            </Grid>
+            <ScrollView  Grid.Row="1" Grid.Column="0">
+                <Grid RowSpacing="1" ColumnSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                        <RowDefinition  Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloading:CachedImage Grid.Row="0" Grid.Column="1" Source = "MainAccount.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="0" Grid.Column="3" Text="Main Account" Style="{DynamicResource labelStyleSettingsMenu}"/>
+                    <Switch Grid.Row="0" Grid.Column="5" IsToggled="True" ></Switch>
+                    <BoxView Grid.Row="1" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="2" Grid.Column="1" Source = "Notification.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="2" Grid.Column="3" Text="Allow Notifications" Style="{DynamicResource labelStyleSettingsMenu}"/>
+                    <Switch Grid.Row="2" Grid.Column="5"  IsToggled="True" ></Switch>
+                    <BoxView Grid.Row="3" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="4" Grid.Column="1" Source = "UpdatePassword.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="4" Grid.Column="3" x:Name="lblUpdatePassword" Text="Update Password"  Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblUpdatePassword_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="5" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="6" Grid.Column="1" Source = "PermissionCode.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="6" Grid.Column="3"  x:Name="lblPermissionCode" Text="Permission Code"  Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblPermissionCode_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="7" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="8" Grid.Column="1" Source = "LifeTime.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="8" Grid.Column="3" x:Name="lblMessageLifeTime" Text="Message Life Time"  Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblMessageLifeTime_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="9" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="10" Grid.Column="1" Source = "Info.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="10" Grid.Column="3" x:Name="lblAbout" Text="About" Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblAbout_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="11" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="12" Grid.Column="1" Source = "Legal.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="12" Grid.Column="3" x:Name="lblLegalInfo" Text="Legal Info" Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblLegalInfo_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="13" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="14" Grid.Column="1" Source = "Help.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="14" Grid.Column="3" x:Name="lblHelpAndSupport" Text="Help And Support" Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblHelpAndSupport_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="15" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="16" Grid.Column="1" Source = "Rate.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="16" Grid.Column="3" x:Name="lblrateMDiChat" Text="Rate MDi Chat" Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblrateMDiChat_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="17" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                    <ffimageloading:CachedImage Grid.Row="18" Grid.Column="1" Source = "Logout.png" Style="{DynamicResource imageStyleSettings}">
+                    </ffimageloading:CachedImage>
+                    <Label Grid.Row="18" Grid.Column="3" x:Name="lblLogout" Text="Logout" Style="{DynamicResource labelStyleSettingsMenu}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblLogout_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="19" Grid.ColumnSpan="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                </Grid>
+            </ScrollView>
+            <BoxView Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent" HeightRequest="1"/>
+            <Grid x:Name="grdQuickStartGuide" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" RowSpacing="1" ColumnSpacing="0" 
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="20"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="30"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="20"/>
+                    <!--<RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="20"/>-->
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="20"/>
+                    <RowDefinition  Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="5" Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Grid.RowSpan="8" Grid.ColumnSpan="3" Style="{DynamicResource boxViewStyleOuterBackgroundLight}">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grSettingsTabStartupGuide" Tapped="grSettingsTabStartupGuide_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Label Grid.Row="2" Grid.Column="2" Text="MDi Chat Quick Start Guide" Style="{DynamicResource labelStyleHeadingLargeCenter}" />
+                <ScrollView Grid.Row="4" Grid.Column="2" Grid.RowSpan="2">
+                    <StackLayout>
+                        <Label x:Name="lblOption1" Text="..." Style="{DynamicResource labelStyleRegular}"/>
+                        <Label x:Name="lblOption2" Text="..." Style="{DynamicResource labelStyleRegular}"/>
+                    </StackLayout>
+                </ScrollView>
+                <Label Grid.Row="6" Grid.Column="2" Text="OK"   Style="{DynamicResource labelStyleHeadingLargeCenter}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grSettingsTabSGbtnOK" Tapped="grSettingsTabSGbtnOK_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Grid.Row="7" Grid.Column="2" Text="Go To Contacts..." Style="{DynamicResource labelStyleHeadingLargeCenter}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grSettingsTabSGbtnGoToCOnacts" Tapped="grSettingsTabSGbtnGoToCOnacts_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <Grid x:Name="grdLogoutAlert" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" RowSpacing="0" ColumnSpacing="0" 
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="20"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="30"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="20"/>
+                    <RowDefinition  Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="7" BackgroundColor="Black" Opacity="0.5"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" BackgroundColor="White">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="grLogoutWhiteBox" Tapped="grLogoutWhiteBox_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Label Grid.Row="2" Grid.Column="2" Text="Logging out" Style="{DynamicResource labelStyleAlert}" />
+                <ActivityIndicator x:Name="loggingoutIndicator" Grid.Row="4" Grid.Column="2" IsVisible="False" BackgroundColor="Transparent" Color="Green" HorizontalOptions="Start"/>
+                <Label Grid.Row="4" Grid.Column="2" Text="Please wait..." Style="{DynamicResource labelStyleAlertFooter}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

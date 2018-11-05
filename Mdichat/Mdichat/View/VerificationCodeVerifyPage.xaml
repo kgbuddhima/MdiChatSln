@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MdiChat;assembly=MdiChat"
+             x:Class="MdiChat.View.VerificationCodeVerifyPage"
+             Title="VerificationCodeVerifyPage">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="50"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="30"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="30"/>
+                <RowDefinition  Height="Auto"/>
+                <RowDefinition  Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="1" TextColor="Black" FontSize = "16" HorizontalTextAlignment="Center"
+               Text="The Verification code has been sent to your phone/email. Please enter the code below." HorizontalOptions="End"/>
+            <Grid  Grid.Row="3"  Grid.Column="1"  RowSpacing="0" ColumnSpacing="5" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0"  Grid.Column="0" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1" x:Name="txt1" Style="{DynamicResource EntryStylePasswordNum}"
+                                     TextChanged="txt1_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                        <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+                <Grid Grid.Row="0"  Grid.Column="1" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1" x:Name="txt2" Style="{DynamicResource EntryStylePasswordNum}"
+                                         TextChanged="txt2_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                    <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+                <Grid Grid.Row="0"  Grid.Column="2" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1"  x:Name="txt3" Style="{DynamicResource EntryStylePasswordNum}"
+                                         TextChanged="txt3_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                    <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+                <Grid Grid.Row="0"  Grid.Column="3" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1" x:Name="txt4" Style="{DynamicResource EntryStylePasswordNum}"
+                                         TextChanged="txt4_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                    <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+                <Grid Grid.Row="0"  Grid.Column="4" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1" x:Name="txt5" Style="{DynamicResource EntryStylePasswordNum}"
+                                         TextChanged="txt5_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                    <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+                <Grid Grid.Row="0"  Grid.Column="5" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1" x:Name="txt6" Style="{DynamicResource EntryStylePasswordNum}"
+                                         TextChanged="txt6_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                    <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+                <Grid Grid.Row="0"  Grid.Column="6" RowSpacing="0" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="2"/>
+                        <RowDefinition  Height="1" Grid.ColumnSpan="3"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*" Grid.RowSpan="2"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <local:NoBorderEntry Grid.Row="0"  Grid.Column="1" x:Name="txt7" Style="{DynamicResource EntryStylePasswordNum}"
+                                         TextChanged="txt7_TextChanged">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="1" />
+                        </Entry.Behaviors>
+                    </local:NoBorderEntry>
+                    <BoxView Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" Style="{DynamicResource boxViewStyleTextContainer}"/>
+                </Grid>
+            </Grid>
+            <Button Grid.Row="5" Grid.Column="1" x:Name="btnVerify"  Text="Verify" Style="{DynamicResource buttonStyleRegular}"
+                    Clicked="btnVerify_Clicked"/>
+            <ActivityIndicator Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3" IsVisible="False"
+                      x:Name="actSendingCode" IsRunning="False" Style="{DynamicResource activityIndiatorStylePrcessing}">
+            </ActivityIndicator>
+            
+
+        </Grid>
+    </ScrollView>
+</ContentPage>      

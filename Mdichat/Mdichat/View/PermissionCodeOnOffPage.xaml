@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MdiChat.View.PermissionCodeOnOffPage"
+             Title="Permission Code">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Grid.Row="0" Padding="10">
+                <Label Text="Turn Permission Code" TextColor="Black" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+                <Grid RowSpacing="1" ColumnSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Off"  Style="{DynamicResource textColorEntry}" HorizontalOptions="End"/>
+                    <Switch  Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" IsToggled="{Binding IsPermissionCodeOn}"></Switch>
+                    <Label Grid.Row="0" Grid.Column="5" Text="On" Style="{DynamicResource textColorEntry}" HorizontalOptions="Start"/>
+                </Grid>
+                <Button  x:Name="btnUpdatePermissioCode" Text="Update Permission Code"  Style="{DynamicResource buttonStyleRegular}" 
+                         Clicked="btnUpdatePermissioCode_Clicked"/>
+                <Label Text="There is no way to recover a forgotten permission code. You have to uninstall ad re-install the app"
+                   Style="{DynamicResource labelStyleRegularLarge}"/>
+                <Button x:Name="btnTimeout" Text="Time Out"  Style="{DynamicResource buttonStyleRegular}" Clicked="btnTimeout_Clicked"/>
+                <Label Text="After 1 hour" x:Name="lblTimeoutPeriod" Style="{DynamicResource textColorEntry}" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <Grid Grid.Column="0" Grid.Row="0" x:Name="grdTimeoutList">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*"/>
+                    <RowDefinition  Height="20"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="10"/>
+
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="10"/>
+
+                    <RowDefinition  Height="Auto"/>
+                    <RowDefinition  Height="20"/>
+                    <RowDefinition  Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <BoxView BackgroundColor="Black" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="19"
+                         Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="17"
+                         Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                <Label Grid.Column="2" Grid.Row="2" Text="Permission Code Timeout" Style="{DynamicResource labelStyleHeadingLargeCenter}"/>
+
+                <Label Grid.Column="2" Grid.Row="4" Text="Very Quickly"  Style="{DynamicResource labelStyleResultBoxColourful}"
+                       FontSize="Large">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tgrQuickly" NumberOfTapsRequired="1" Tapped="tgrQuickly_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <BoxView Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5" Style="{DynamicResource boxViewStyleSeparator}"/>
+                <Label Grid.Column="2" Grid.Row="6" Text="1 Minute" Style="{DynamicResource labelStyleResultBoxColourful}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tgrOneM"  NumberOfTapsRequired="1" Tapped="tgrOneM_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <BoxView  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" Style="{DynamicResource boxViewStyleSeparator}"/>
+                <Label Grid.Column="2" Grid.Row="8" Text="5 Minute" Style="{DynamicResource labelStyleResultBoxColourful}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer  x:Name="tgrFiveM"  NumberOfTapsRequired="1" Tapped="tgrFiveM_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <BoxView  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="9" Style="{DynamicResource boxViewStyleSeparator}"/>
+                <Label Grid.Column="2" Grid.Row="10" Text="10 Minute" Style="{DynamicResource labelStyleResultBoxColourful}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer  x:Name="tgrTenM"  NumberOfTapsRequired="1" Tapped="tgrTenM_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <BoxView  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="11" Style="{DynamicResource boxViewStyleSeparator}"/>
+                <Label Grid.Column="2" Grid.Row="12" Text="30 Minute" Style="{DynamicResource labelStyleResultBoxColourful}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer  x:Name="tgrThirtyM"  NumberOfTapsRequired="1" Tapped="tgrThirtyM_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <BoxView  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="13" Style="{DynamicResource boxViewStyleSeparator}"/>
+                <Label Grid.Column="2" Grid.Row="14" Text="1 Hour" Style="{DynamicResource labelStyleResultBoxColourful}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer  x:Name="tgrOneH"  NumberOfTapsRequired="1" Tapped="tgrOneH_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button  Grid.Column="2" Grid.Row="16" x:Name="btnCancel" Text="Cancel"  Style="{DynamicResource buttonStyleRegular}" Clicked="btnCancel_Clicked"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

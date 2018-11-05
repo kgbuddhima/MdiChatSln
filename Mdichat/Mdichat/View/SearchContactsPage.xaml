@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MdiChat.View.SearchContactsPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="Find MDi Contacts">
+  <ScrollView>
+        <Grid Grid.Row="0" Grid.Column="0" x:Name="grdContacts" ColumnSpacing="5"
+              VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Padding="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ffimageloading:CachedImage Grid.Row="1" Grid.Column="0" DownsampleToViewSize="true" Source = "Search64A.png" Style="{DynamicResource imageStyleSearchBar}">
+            </ffimageloading:CachedImage>
+            <Entry  Grid.Row="1" Grid.Column="1" x:Name="TxtSearchStr" Placeholder="Find MDi Contacts..." TextChanged="TxtSearchStr_OnTextChanged"/>
+            <ScrollView   Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  VerticalOptions="Fill">
+                <ListView x:Name="listViewContactList"  HasUnevenRows="true" ItemsSource="{Binding ContactsCollection}"
+                          SeparatorVisibility="Default">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Tapped="Cell_OnTapped" >
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ffimageloading:CachedImage  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" DownsampleToViewSize="true" Source = "{Binding Image}" Style="{DynamicResource imageStyleInListView}">
+                                        </ffimageloading:CachedImage>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding ContactName}" FontSize="Medium" Style="{DynamicResource labelStyleHeading}"/>
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ContactNumber}" FontSize="Small" Style="{DynamicResource labelStyleRegular}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using MdiChat.MdiWebService;
+//using Mdichat.MdiWebService;
 using System.Net;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,15 +13,15 @@ using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using Newtonsoft;
 using System.Net.Http;
-//using MdiChat.Model;
-//using MdiChat.View;
-//using MdiChat.ViewModel;
+using Mdichat.Model;
+using Mdichat.View;
+using Mdichat.ViewModel;
 using Microsoft.AppCenter;
-using MdiChat.MdiWebService;
+using Mdichat.MdiWebService;
 //using Microsoft.AppCenter.Analytics;
 //using Microsoft.AppCenter.Crashes;
 
-namespace MdiChat
+namespace Mdichat
 {
     public partial class App : Application
     {

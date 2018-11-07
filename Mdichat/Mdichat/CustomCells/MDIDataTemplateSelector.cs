@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.CustomCells
+namespace Mdichat.CustomCells
 {
    public class MyDataTemplateSelector : DataTemplateSelector
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MdiChat.Converter
+namespace Mdichat.Converter
 {
     public class MdiImageConverter : IValueConverter
     {

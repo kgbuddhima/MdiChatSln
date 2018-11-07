@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MdiChat.MdiWebService.DTO
+namespace Mdichat.MdiWebService.DTO
 {
     public class MobileNoRegistration: Common
     {

@@ -1,11 +1,11 @@
 ﻿
 using Android.App;
-using MdiChat.Droid.Services;
-using MdiChat.Services;
+using Mdichat.Droid.Services;
+using Mdichat.Services;
 using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(CloseApplication))]
-namespace MdiChat.Droid.Services
+namespace Mdichat.Droid.Services
 {
     public class CloseApplication : ICloseApplication
     {

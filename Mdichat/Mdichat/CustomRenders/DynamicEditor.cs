@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MdiChat
+namespace Mdichat
 {
     public class DynamicEditor : Editor
     {

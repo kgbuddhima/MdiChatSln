@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.ViewModel;
+using Mdichat.ViewModel;
 using Xamarin.Forms;
 
-namespace MdiChat.Model
+namespace Mdichat.Model
 {
     public class ContactModel : BaseViewModel
     {

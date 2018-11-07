@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.Helpers;
+using Mdichat.Helpers;
 using System.ComponentModel;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class PermisionCodeVM : INotifyPropertyChanged
     {

@@ -121,12 +121,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="LocalNotificationService.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MdiFirebaseIIDService.cs" />
     <Compile Include="MdiFirebaseMessagingService.cs" />
+    <Compile Include="Persistence\SQLiteDb.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CloseApp.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\UserContactsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

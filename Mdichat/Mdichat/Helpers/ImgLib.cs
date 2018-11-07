@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MdiChat.Helpers
+namespace Mdichat.Helpers
 {
     public static class ImgLib
     {

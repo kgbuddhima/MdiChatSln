@@ -1,4 +1,4 @@
-﻿using MdiChat.Model;
+﻿using Mdichat.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class ContactsViewModel : INotifyPropertyChanged
     {

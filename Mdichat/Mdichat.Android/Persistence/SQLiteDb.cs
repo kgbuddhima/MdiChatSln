@@ -1,14 +1,14 @@
 ﻿using System;
 using System.IO;
-using MdiChat.Droid.Persistence;
+using Mdichat.Droid.Persistence;
 using SQLite;
-using MdiChat.Persistence;
+using Mdichat.Persistence;
 using SQLite;
 using Xamarin.Forms;
 
 
 [assembly: Dependency(typeof(SQLiteDb))]
-namespace MdiChat.Droid.Persistence
+namespace Mdichat.Droid.Persistence
 {
     public class SQLiteDb : ISQLiteDb
     {

@@ -10,9 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Firebase.Iid;
-using MdiChat.Services;
+using Mdichat.Services;
 
-namespace MdiChat.Droid
+namespace Mdichat.Droid
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]

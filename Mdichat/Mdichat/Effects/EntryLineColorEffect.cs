@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MdiChat.Effects
+namespace Mdichat.Effects
 {
     public class EntryLineColorEffect : RoutingEffect
     {

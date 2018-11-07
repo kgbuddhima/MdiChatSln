@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MdiChat.CustomCells
+namespace Mdichat.CustomCells
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IncomingViewCell : ViewCell

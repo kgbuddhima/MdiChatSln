@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using MdiChat.Effects;
+using Mdichat.Effects;
 using Xamarin.Forms;
 
-namespace MdiChat.Behaviors
+namespace Mdichat.Behaviors
 {
     public static class LineColorBehavior
     {

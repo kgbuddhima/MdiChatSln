@@ -5,11 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.MdiWebService.DTO;
+using Mdichat.MdiWebService.DTO;
 using Newtonsoft.Json;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.MdiWebService
+namespace Mdichat.MdiWebService
 {
     public class UserService : IUserService
     {

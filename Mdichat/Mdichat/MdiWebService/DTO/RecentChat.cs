@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 
-namespace MdiChat.MdiWebService.DTO
+namespace Mdichat.MdiWebService.DTO
 {
     public class RecentChat
     {

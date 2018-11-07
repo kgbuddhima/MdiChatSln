@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.MdiWebService
+namespace Mdichat.MdiWebService
 {
     public class ServiceBase: IServiceBase
     {

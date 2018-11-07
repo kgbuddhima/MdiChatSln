@@ -11,12 +11,12 @@ using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
-using MdiChat.Droid;
-using MdiChat.Model;
-using MdiChat.Services;
+using Mdichat.Droid;
+using Mdichat.Model;
+using Mdichat.Services;
 
 [assembly: Xamarin.Forms.Dependency(typeof(LocalNotificationService))]
-namespace MdiChat.Droid
+namespace Mdichat.Droid
 {
     
     public class LocalNotificationService : ILocalNotificationService

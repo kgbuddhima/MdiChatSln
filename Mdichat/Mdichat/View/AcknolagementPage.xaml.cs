@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MdiChat.View
+namespace Mdichat.View
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class AcknolagementPage : ContentPage
+	{
+		public AcknolagementPage ()
+		{
+			InitializeComponent ();            
+        }
 
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AcknolagementPage : ContentPage
-    {
-        public AcknolagementPage()
+        protected override void OnAppearing()
         {
-            InitializeComponent();
+            base.OnAppearing();
             StringBuilder builder = new StringBuilder();
             builder.Append("I have taken efforts in this project. However, it would not have been possible without the kind support and help of many individuals and organizations. I would like to extend my sincere thanks to all of them.");
             builder.Append("I am highly indebted to (Name of your Organization Guide) for their guidance and constant supervision as well as for providing necessary information regarding the project & also for their support in completing the project.");
@@ -31,38 +32,6 @@ namespace MdiChat.View
             builder.Append("With acknowledgement letter, used in business purposes you should clearly confirm that facts stated are true, i.e. that communicated information is truthful. To simplify a bit, this means that is you want to acknowledge receipt of the order you must quote and reference buyer’s request for the order, and then confirm it or make certain amendments. In this letter you can also give a timeline of activities that will proceed as a result of the order acknowledgement. Or in another case if you acknowledge the receipt of someone job application, you should state that application is being received, and briefly indicate future actions in regard to the received application.");
             builder.Append("Acknowledgement letter is very short business letter, and is intended to communicate brief and clear message. It is quite common to use this letter if you are not aware at the time of future developments in regard to someone’s query.");
             lblAck.Text = builder.ToString();
-            // BindingContext = new AcknolagementPageViewModel();
         }
     }
-
-    /*
-    class AcknolagementPageViewModel : INotifyPropertyChanged
-    {
-
-        public AcknolagementPageViewModel()
-        {
-            IncreaseCountCommand = new Command(IncreaseCount);
-        }
-
-        int count;
-
-        string countDisplay = "You clicked 0 times.";
-        public string CountDisplay
-        {
-            get { return countDisplay; }
-            set { countDisplay = value; OnPropertyChanged(); }
-        }
-
-        public ICommand IncreaseCountCommand { get; }
-
-        void IncreaseCount() =>
-            CountDisplay = $"You clicked {++count} times";
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName]string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-    }
-    */
 }

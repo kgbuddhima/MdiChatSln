@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MdiChat.Behaviors.Base
+namespace Mdichat.Behaviors.Base
 {
     public class BindableBehavior<T> : Behavior<T> where T : BindableObject
     {

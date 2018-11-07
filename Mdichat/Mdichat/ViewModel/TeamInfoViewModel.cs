@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class TeamInfoViewModel : INotifyPropertyChanged
     {

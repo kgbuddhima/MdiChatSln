@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.Model;
+using Mdichat.Model;
 using Xamarin.Forms;
 
-namespace MdiChat.Services
+namespace Mdichat.Services
 {
     public static class NotificationService
     {

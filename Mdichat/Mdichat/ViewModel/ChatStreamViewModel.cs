@@ -1,18 +1,18 @@
-﻿using MdiChat.Model;
+﻿using Mdichat.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-using MdiChat.MdiWebService.DTO;
+using Mdichat.MdiWebService.DTO;
 using System.Windows.Input;
-using MdiChat.Persistence;
+using Mdichat.Persistence;
 using SQLite;
 using Xamarin.Forms;
-using MdiChat.Services;
+using Mdichat.Services;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class ChatStreamViewModel : BaseViewModel
     {
@@ -61,7 +61,7 @@ namespace MdiChat.ViewModel
         public event EventHandler WillInsertNextPage;
         private ObservableCollection<MdiContact> _groupMembersCollection;
         private List<MdiContact> _cachedContacts;
-        private MdiChat.Persistence.ChatService _localChatService;
+        private Mdichat.Persistence.ChatService _localChatService;
 
         public ChatStreamViewModel()
         {

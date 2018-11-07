@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace MdiChat.Behaviors
+namespace Mdichat.Behaviors
 {
     public class InfiniteScroll : Behavior<ListView>
     {

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.MdiWebService.DTO;
-using MdiChat.Model;
+using Mdichat.MdiWebService.DTO;
+using Mdichat.Model;
 using SQLite;
 using Xamarin.Forms;
 
-namespace MdiChat.Persistence
+namespace Mdichat.Persistence
 {
     public class ChatService
     {

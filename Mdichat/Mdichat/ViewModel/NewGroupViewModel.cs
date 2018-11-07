@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class NewGroupViewModel : INotifyPropertyChanged
     {

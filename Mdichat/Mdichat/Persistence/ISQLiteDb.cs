@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 
-namespace MdiChat.Persistence
+namespace Mdichat.Persistence
 {
     public interface ISQLiteDb
     {

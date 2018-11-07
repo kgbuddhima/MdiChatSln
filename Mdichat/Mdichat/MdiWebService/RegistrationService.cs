@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using MdiChat.MdiWebService.DTO;
+using Mdichat.MdiWebService.DTO;
 using Newtonsoft.Json;
-using MdiChat.Model;//
+using Mdichat.Model;//
 
-namespace MdiChat.MdiWebService
+namespace Mdichat.MdiWebService
 {
     public class RegistrationService : IRegistrationService
     {

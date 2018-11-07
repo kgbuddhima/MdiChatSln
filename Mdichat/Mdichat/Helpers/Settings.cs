@@ -1,6 +1,6 @@
 // Helpers/Settings.cs
 
-using MdiChat.MdiWebService.DTO;
+using Mdichat.MdiWebService.DTO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Plugin.Settings;
@@ -8,7 +8,7 @@ using Plugin.Settings.Abstractions;
 using System;
 using System.Collections.Generic;
 
-namespace MdiChat.Helpers
+namespace Mdichat.Helpers
 {
 	/// <summary>
 	/// This is the Settings static class that can be used in your Core solution or in any

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.MdiWebService.DTO;
-using MdiChat.Model;
+using Mdichat.MdiWebService.DTO;
+using Mdichat.Model;
 
-namespace MdiChat.MdiWebService
+namespace Mdichat.MdiWebService
 {
     public interface IChatService
     {

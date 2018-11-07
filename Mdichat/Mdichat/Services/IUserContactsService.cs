@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.Services
+namespace Mdichat.Services
 {
     public interface IUserContactsService
     {

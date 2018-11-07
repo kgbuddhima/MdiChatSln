@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

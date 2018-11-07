@@ -4,10 +4,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Windows.Input; 
-using MdiChat.Behaviors.Base;
+using Mdichat.Behaviors.Base;
 using Xamarin.Forms;
 
-namespace MdiChat.Behaviors
+namespace Mdichat.Behaviors
 {
     public class EventToCommandBehavior : BindableBehavior<Xamarin.Forms.View>
     {

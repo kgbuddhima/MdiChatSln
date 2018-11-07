@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MdiChat.Model
+namespace Mdichat.Model
 {
     public class Message : ObservableObject, INotifyPropertyChanged
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MdiChat.Model
+namespace Mdichat.Model
 {
     public abstract class ObservableObject : INotifyPropertyChanged
     {

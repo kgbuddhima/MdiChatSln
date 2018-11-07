@@ -11,13 +11,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Java.IO;
-using MdiChat.Droid.Services;
-using MdiChat.Services;
+using Mdichat.Droid.Services;
+using Mdichat.Services;
 using Console = System.Console;
 using Environment = Android.OS.Environment;
 
 [assembly: Xamarin.Forms.Dependency(typeof(FileService))]
-namespace MdiChat.Droid.Services
+namespace Mdichat.Droid.Services
 {
     public class FileService : IFileService
     {

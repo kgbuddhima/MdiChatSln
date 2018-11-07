@@ -9,17 +9,18 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MdiChat.Model;
-using MdiChat.Services;
+using Mdichat.Model;
+using Mdichat.Services;
 using Xamarin.Forms;
-using Xamarin.Contacts;
+//using Xamarin.Contacts;
 
-[assembly: Dependency(typeof(MdiChat.Droid.Services.UserContactsService))]
-namespace MdiChat.Droid.Services
+[assembly: Dependency(typeof(Mdichat.Droid.Services.UserContactsService))]
+namespace Mdichat.Droid.Services
 {
     public class UserContactsService : IUserContactsService
     {
-        private AddressBook _book;
+        List<ContactModel> _book;
+        //private AddressBook _book;
 
         private static IEnumerable<ContactModel> _contacts;
 
@@ -30,7 +31,7 @@ namespace MdiChat.Droid.Services
 
         public List<ContactModel> FindContacts(string searchInContactsString)
         {
-            _book = new AddressBook(Forms.Context.ApplicationContext);
+            _book = new List<ContactModel>();// new AddressBook(Forms.Context.ApplicationContext);
             var ResultContacts = new List<ContactModel>();
 
             foreach (var currentContact in _contacts)
@@ -50,10 +51,10 @@ namespace MdiChat.Droid.Services
 
         public async Task<IEnumerable<ContactModel>> GetAllContacts()
         {
-            _book = new AddressBook(Forms.Context.ApplicationContext);
+            _book = new List<ContactModel>();//new AddressBook(Forms.Context.ApplicationContext);
             if (_contacts != null) return _contacts;
             try
-            {
+            {/*
                 var contacts = new List<ContactModel>();
                 await _book.RequestPermission().ContinueWith(t =>
                 {
@@ -78,15 +79,15 @@ namespace MdiChat.Droid.Services
                       //  }
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext());
-
-                _contacts = (from c in contacts orderby c.Contact_DisplayName select c).ToList();
-
+                )*/
+             // _contacts = (from c in contacts orderby c.Contact_DisplayName select c).ToList();
+                return _book;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return _contacts;
+           // return _contacts;
         }
     }
 }

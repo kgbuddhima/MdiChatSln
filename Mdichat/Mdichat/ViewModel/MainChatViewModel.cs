@@ -4,15 +4,15 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.Model;
+using Mdichat.Model;
 using MvvmHelpers;
 using System.Windows.Input;
-using MdiChat.MdiWebService.DTO;
+using Mdichat.MdiWebService.DTO;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class MainChatViewModel : INotifyPropertyChanged
     {

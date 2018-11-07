@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MdiChat.MdiWebService.DTO;
-using MdiChat.Services;
-using MdiChat.Validations;
-//using MdiChat.View;
+using Mdichat.MdiWebService.DTO;
+using Mdichat.Services;
+using Mdichat.Validations;
+//using Mdichat.View;
 using Xamarin.Forms;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {

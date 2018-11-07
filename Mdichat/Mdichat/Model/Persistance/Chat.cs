@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MdiChat.Model.Persistance
+namespace Mdichat.Model.Persistance
 {
     public class Chat
     {

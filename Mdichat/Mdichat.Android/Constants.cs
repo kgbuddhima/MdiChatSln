@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace MdiChat.Droid
+namespace Mdichat.Droid
 {
     public static class Constants
     {

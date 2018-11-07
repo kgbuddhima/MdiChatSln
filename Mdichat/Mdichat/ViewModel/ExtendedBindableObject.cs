@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public abstract class ExtendedBindableObject : BindableObject
     {

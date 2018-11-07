@@ -1,11 +1,11 @@
-﻿using MdiChat.ViewModel;
+﻿using Mdichat.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MdiChat.Validations
+namespace Mdichat.Validations
 {
     public class ValidatableObject<T> : ExtendedBindableObject, IValidity
     {

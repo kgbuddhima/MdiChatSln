@@ -12,9 +12,9 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Firebase.Messaging;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.Droid
+namespace Mdichat.Droid
 {
     [Service]
     [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
@@ -36,7 +36,7 @@ namespace MdiChat.Droid
             {
                 //These is how most messages will be received
                 Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
-                MdiChat.Services.NotificationService.HandleNotification(chatArgs);
+                Mdichat.Services.NotificationService.HandleNotification(chatArgs);
 
                 //  SendNotification(message.Data["message"], message.Data["groupId"], message.Data["contactId"] ?? "", message.Data["username"] ?? "");
             }
@@ -45,7 +45,7 @@ namespace MdiChat.Droid
                 //Only used for debugging payloads sent from the Azure portal
 
                 // Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
-                MdiChat.Services.NotificationService.HandleNotification(chatArgs);
+                Mdichat.Services.NotificationService.HandleNotification(chatArgs);
 
             }
 

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.Model;
+using Mdichat.Model;
 
-namespace MdiChat.Services
+namespace Mdichat.Services
 {
     public class ChatClient
     {

@@ -8,7 +8,7 @@ using System.IO;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace MdiChat.ViewModel
+namespace Mdichat.ViewModel
 {
     public class UserInfoViewModel : INotifyPropertyChanged
     {

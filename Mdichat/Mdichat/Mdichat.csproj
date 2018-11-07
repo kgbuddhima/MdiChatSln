@@ -10,9 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="obj\**" />
     <Compile Remove="View\**" />
+    <EmbeddedResource Remove="obj\**" />
     <EmbeddedResource Remove="View\**" />
+    <None Remove="obj\**" />
     <None Remove="View\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="View\AboutPage.xaml.cs" />
+    <Compile Include="View\AcknolagementPage.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,5 +36,17 @@
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="View\AcknolagementPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="View\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

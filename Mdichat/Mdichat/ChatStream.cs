@@ -1,15 +1,15 @@
-﻿using MdiChat.Model;
-using MdiChat.ViewModel;
+﻿using Mdichat.Model;
+using Mdichat.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MdiChat.Persistence;
-using MdiChat.Services;
+using Mdichat.Persistence;
+using Mdichat.Services;
 using Xamarin.Forms;
 
-namespace MdiChat
+namespace Mdichat
 {
     public class ChatStream : ListView
     {

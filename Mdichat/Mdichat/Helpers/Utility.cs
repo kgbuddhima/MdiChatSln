@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace MdiChat.Helpers
+namespace Mdichat.Helpers
 {
     public static class Utility
     {

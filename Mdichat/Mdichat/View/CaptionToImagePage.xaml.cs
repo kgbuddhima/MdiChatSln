@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Mdichat.View
+{
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class CaptionToImagePage : ContentPage
+	{
+		public CaptionToImagePage ()
+		{
+			InitializeComponent ();
+            NavigationCommand = new Command(NavigationCommandToInfo);
+            ToolbarItems.Add(new ToolbarItem() { Text = "Done", Command = NavigationCommand });
+        }
+
+        public ICommand NavigationCommand { get; }
+
+        void NavigationCommandToInfo()
+        {
+            Navigation.PopAsync();
+        }
+    }
+}

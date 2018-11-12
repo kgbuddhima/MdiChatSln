@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Mdichat.View.CategoriesPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ScrollView   Grid.Row="0" Grid.Column="0"  VerticalOptions="FillAndExpand" Padding="10,10,10,10">
+                    <ListView x:Name="listViewCategoryList" HasUnevenRows="true" SeparatorVisibility="Default" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" DownsampleToViewSize="true" Source="List.png" Style="{DynamicResource imageStyleInListView}">
+                                            </ffimageloading:CachedImage>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding ContactName}" FontSize="Medium" Style="{DynamicResource labelStyleRegular}"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding ContactNumber}" FontSize="Small" Style="{DynamicResource labelStyleLightGray}"/>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+                <Grid Grid.Row="0" Grid.Column="0" ColumnSpacing="5" x:Name="grdCategoryCreate">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="9"  Style="{DynamicResource boxViewStyleOuterBackgroundDark}"/>
+                    <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Grid.RowSpan="7" Style="{DynamicResource boxViewStyleOuterBackgroundLight}"/>
+                    <BoxView Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="3" Style="{DynamicResource boxViewStyleDialague}"/>
+                    <ffimageloading:CachedImage  Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"
+			DownsampleToViewSize="true" HeightRequest="45" WidthRequest="45" Source = "Pencil.png">
+                    </ffimageloading:CachedImage>
+                    <Label  Grid.Row="2" Grid.Column="2" Text="Create Cateory" FontSize="Large" FontAttributes="Bold" Style="{DynamicResource labelStyleLightGray}" HorizontalTextAlignment="Center"/>
+                    <Label  Grid.Row="3" Grid.Column="2" Text="Enter the Category Name" FontSize="Medium" Style="{DynamicResource labelStyleLightGray}" HorizontalTextAlignment="Start"/>
+                    <Entry  Grid.Row="4" Grid.Column="2" x:Name="txtCategoryName" Style="{DynamicResource EntryStyleRegular}"/>
+                    <Button  Grid.Row="5" Grid.Column="2" x:Name="btnCategoryCreateSave"  Text="Save" Style="{DynamicResource buttonStyleRegular}" 
+						 Clicked="btnCategoryCreateSave_Clicked"/>
+                    <Button  Grid.Row="6" Grid.Column="2" x:Name="btnCategoryCreateCancel" Text="Cancel" Style="{DynamicResource buttonStyleSpecial}" 
+						 Clicked="btnCategoryCreateCancel_Clicked"/>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -21,6 +21,9 @@
   <ItemGroup>
     <Compile Include="View\AboutPage.xaml.cs" />
     <Compile Include="View\AcknolagementPage.xaml.cs" />
+    <Compile Include="View\CaptionToImagePage.xaml.cs" />
+    <Compile Include="View\CategoriesPage.xaml.cs" />
+    <Compile Include="View\CategorySelectPage.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +49,24 @@
 
   <ItemGroup>
     <EmbeddedResource Include="View\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="View\CaptionToImagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="View\CategoriesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="View\CategorySelectPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
